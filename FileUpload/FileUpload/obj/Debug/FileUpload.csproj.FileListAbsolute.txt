@@ -1,0 +1,18 @@
+c:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload\FileUpload\bin\FileUpload.dll.config
+c:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload\FileUpload\bin\FileUpload.dll
+c:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload\FileUpload\bin\FileUpload.pdb
+c:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload\FileUpload\obj\Debug\FileUpload.csprojResolveAssemblyReference.cache
+c:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload\FileUpload\obj\Debug\FileUpload.dll
+c:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload\FileUpload\obj\Debug\FileUpload.pdb
+C:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload 2\FileUpload\obj\Debug\FileUpload.csprojResolveAssemblyReference.cache
+C:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload 2\FileUpload\obj\Debug\FileUpload.dll
+C:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload 2\FileUpload\bin\FileUpload.dll.config
+C:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload 2\FileUpload\bin\FileUpload.dll
+C:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload 2\FileUpload\bin\FileUpload.pdb
+C:\Users\Dima\Documents\Visual Studio 2013\Projects\FileUpload 2\FileUpload\obj\Debug\FileUpload.pdb
+D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\bin\FileUpload.dll.config
+D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\bin\FileUpload.dll
+D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\bin\FileUpload.pdb
+D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\obj\Debug\FileUpload.csprojResolveAssemblyReference.cache
+D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\obj\Debug\FileUpload.dll
+D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\obj\Debug\FileUpload.pdb
