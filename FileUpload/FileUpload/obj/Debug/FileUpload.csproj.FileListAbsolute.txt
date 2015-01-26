@@ -16,3 +16,9 @@ D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\Fil
 D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\obj\Debug\FileUpload.csprojResolveAssemblyReference.cache
 D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\obj\Debug\FileUpload.dll
 D:\5 курс снова\Веб разработка\ГОТОВЫЕ ЛАБЫ\FileUpload 2\FileUpload\obj\Debug\FileUpload.pdb
+C:\Users\Dima\Documents\GitHub\Lab3\FileUpload\FileUpload\obj\Debug\FileUpload.csprojResolveAssemblyReference.cache
+C:\Users\Dima\Documents\GitHub\Lab3\FileUpload\FileUpload\obj\Debug\FileUpload.dll
+C:\Users\Dima\Documents\GitHub\Lab3\FileUpload\FileUpload\bin\FileUpload.dll.config
+C:\Users\Dima\Documents\GitHub\Lab3\FileUpload\FileUpload\bin\FileUpload.dll
+C:\Users\Dima\Documents\GitHub\Lab3\FileUpload\FileUpload\bin\FileUpload.pdb
+C:\Users\Dima\Documents\GitHub\Lab3\FileUpload\FileUpload\obj\Debug\FileUpload.pdb

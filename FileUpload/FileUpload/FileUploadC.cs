@@ -12,8 +12,8 @@ namespace FileUpload
     {
         //Контролы
         private Button BtnUpload;
-        private Button BtnDownload;
         private Button BtnDelete;
+        private HyperLink HLinkDownload;
         private System.Web.UI.WebControls.FileUpload FUpload;
         private Image ImgFile;
         private Label StatusLabel;
@@ -48,6 +48,21 @@ namespace FileUpload
             }
         }
 
+        //Путь к каталогу сервера
+        public string ServerPath
+        {
+            get
+            {
+                object o = ViewState["ServerPath"];
+                return (o == null) ? "c:\\" : (string)o;
+            }
+
+            set
+            {
+                ViewState["ServerPath"] = value;
+            }
+        }
+
         //Загружен ли файл
         public bool FileUploaded
         {
@@ -63,8 +78,21 @@ namespace FileUpload
             }
         }
 
-        //Метод загрузки файла с сервера
-        public event EventHandler DownloadFile;
+        private string GetDownloadLink()
+        {
+            string res = FilePath.Replace(ServerPath, "");
+
+            if (res == "")
+            {
+                res = "~/" + FileName;
+            }
+            else
+            {
+                res = "~/" + res + FileName;
+            }
+
+            return res;
+        }
 
         //Обработчик события нажатия кнопки BtnUpload
         protected void BtnUpload_Click(object sender, EventArgs e)
@@ -83,6 +111,10 @@ namespace FileUpload
                     {
                         ImgFile.ImageUrl = FileName;
                     }
+
+                    HLinkDownload.Attributes.Add("download", FileName);
+                    HLinkDownload.Text = "Скачать " + FileName;
+                    HLinkDownload.NavigateUrl = GetDownloadLink();
                 }
                 catch (Exception ex)
                 {
@@ -96,26 +128,6 @@ namespace FileUpload
 
         }
 
-        //Обработчик события нажатия кнопки BtnDownload
-        protected void BtnDownload_Click(object sender, EventArgs e)
-        {
-            if (DownloadFile != null)
-            {
-                try
-                {
-                    this.DownloadFile(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    StatusLabel.Text = "Статус: Файл не загружен. Произошла ошибка: " + ex.Message;
-                }
-            }
-            else
-            {
-                StatusLabel.Text = "Статус: Файл не загружен. Не определен метод DownloadFile.";
-            }
-
-        }
         //Обработчик события нажатия кнопки BtnDelete
         protected void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -149,11 +161,9 @@ namespace FileUpload
             BtnUpload.Width = 80;
             BtnUpload.Click += new EventHandler(BtnUpload_Click);
 
-            BtnDownload = new Button();
-            BtnDownload.ID = "BtnDownload";
-            BtnDownload.Text = "Скачать";
-            BtnDownload.Width = 80;
-            BtnDownload.Click += new EventHandler(BtnDownload_Click);
+            HLinkDownload = new HyperLink();
+            HLinkDownload.ID = "HLinkDownload";
+            HLinkDownload.Text = "Скачать";
 
             BtnDelete = new Button();
             BtnDelete.ID = "BtnDelete";
@@ -172,7 +182,7 @@ namespace FileUpload
             StatusLabel.Text = "";
 
             this.Controls.Add(BtnUpload);
-            this.Controls.Add(BtnDownload);
+            this.Controls.Add(HLinkDownload);
             this.Controls.Add(BtnDelete);
             this.Controls.Add(FUpload);
             this.Controls.Add(ImgFile);
@@ -192,7 +202,7 @@ namespace FileUpload
             {
                 BtnDelete.Text = "Удалить";
                 this.Controls.Add(ImgFile);
-                this.Controls.Add(BtnDownload);
+                this.Controls.Add(HLinkDownload);
                 this.Controls.Add(BtnDelete);
                 this.Controls.Add(StatusLabel);
             }
@@ -235,7 +245,7 @@ namespace FileUpload
                     writer.RenderBeginTag(HtmlTextWriterTag.Tr);
                         writer.AddStyleAttribute(HtmlTextWriterStyle.Width, "185px");
                         writer.RenderBeginTag(HtmlTextWriterTag.Td);
-                            BtnDownload.RenderControl(writer);
+                            HLinkDownload.RenderControl(writer);
                         writer.RenderEndTag();
                         writer.AddStyleAttribute(HtmlTextWriterStyle.Width, "85px");
                         writer.RenderBeginTag(HtmlTextWriterTag.Td);
@@ -271,7 +281,7 @@ namespace FileUpload
 
             //create an array to hold the base control’s state 
             //and this control’s state.
-            object thisState = new object[] { baseState, this.FileUploaded, this.FileName, this.FilePath};
+            object thisState = new object[] { baseState, this.FileUploaded, this.FileName, this.FilePath, this.ServerPath};
             return thisState;
         }
 
@@ -288,6 +298,7 @@ namespace FileUpload
             FileUploaded = (bool)stateLastRequest[1];
             FileName = (string)stateLastRequest[2];
             FilePath = (string)stateLastRequest[3];
+            ServerPath = (string)stateLastRequest[4];
         }
     }
 }
